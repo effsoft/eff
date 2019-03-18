@@ -1,11 +1,11 @@
 <?php
 
-namespace effsoft;
+namespace effsoft\eff;
 
 use Yii;
 use yii\web\Controller;
 
-class BaseController extends Controller{
+class EffController extends Controller{
 
     public function init(){
         parent::init();
