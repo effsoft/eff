@@ -12,28 +12,24 @@ class EffModule extends Module {
     public function init(){
         parent::init();
 
-        $this->registerThemes();
     }
 
-    private function registerThemes(){
-
-        if (empty($this->module_name)){
-            throw new NotFoundHttpException('$module_name can not be empty!');
-        }
-        if (empty(\Yii::$app->params['theme'])){
-            throw new NotFoundHttpException('theme in config\params can not be empty!');
-        }
-
-        if(!empty($this->module_name) && !empty(\Yii::$app->params['theme'])){
-
-            \Yii::$app->view->theme->pathMap = [
-                dirname(dirname(__DIR__)) . '/' . $this->module_name . '/src/views' => [
-                    '@app/themes/' . \Yii::$app->params['theme'] . '/' . $this->module_name,
-                    dirname(__DIR__) . '/views',
-                ],
-            ];
-
-        }
-    }
+//    public function registerThemes($theme = 'effsoft'){
+//
+//        if (empty($this->module_name)){
+//            throw new NotFoundHttpException('$module_name can not be empty!');
+//        }
+//
+////        \Yii::$app->view->theme->pathMap = [
+////
+////            dirname(dirname(__DIR__)) . '/' . $this->module_name . '/src/views' => [
+////
+////                '@app/themes/' . $theme . '/' . $this->module_name,
+////
+////                dirname(__DIR__) . '/views',
+////
+////            ],
+////        ];
+//    }
 
 }
