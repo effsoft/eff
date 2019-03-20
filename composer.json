@@ -14,12 +14,6 @@
   "require-dev": {
 
   },
-  "config": {
-    "process-timeout": 1800,
-    "fxp-asset": {
-      "enabled": false
-    }
-  },
   "autoload" : {
     "psr-4" : {
       "effsoft\\eff\\" : "src/"
@@ -30,7 +24,17 @@
       "effsoft\\eff\\" : "src/"
     }
   },
+  "config": {
+    "process-timeout": 1800,
+    "fxp-asset": {
+      "enabled": false
+    }
+  },
   "repositories": {
+    "packagist-image":{
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    },
     "asset-packagist":{
       "type": "composer",
       "url": "https://asset-packagist.org"
