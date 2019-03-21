@@ -7,15 +7,16 @@ use yii\web\Controller;
 
 class EffController extends Controller{
 
-    private $theme = 'effsoft';
-    public function setTheme(string $theme): void
-    {
-        $this->theme = $theme;
-    }
-    public function getTheme(): string
-    {
-        return $this->theme;
-    }
+    // private $theme = 'effsoft';
+
+    // public function setTheme(string $theme): void
+    // {
+    //     $this->theme = $theme;
+    // }
+    // public function getTheme(): string
+    // {
+    //     return $this->theme;
+    // }
 
 
 
@@ -31,22 +32,24 @@ class EffController extends Controller{
 
         $session = Yii::$app->session;
         $session->open();
+
+        $session['theme'] = 'effsoft';
     }
 
-    public function render($view, $params = [], $theme = ''){
-        if (!empty($theme)){
-            $this->theme = $theme;
-        }
+    // public function render($view, $params = [], $theme = ''){
+    //     if (!empty($theme)){
+    //         $this->theme = $theme;
+    //     }
+        
+    //     $this->getView()->theme = \Yii::createObject([
+    //         'class' => '\yii\base\Theme',
+    //         'pathMap' => [
+    //             dirname(dirname(__DIR__)) . '/' . $this->module->module_name . '/src/views' => [
+    //                 '@app/themes/' . $this->theme . '/' . $this->module->module_name
+    //             ],
+    //         ],
+    //     ]);
 
-        $this->getView()->theme = \Yii::createObject([
-            'class' => '\yii\base\Theme',
-            'pathMap' => [
-                dirname(dirname(__DIR__)) . '/' . $this->module->module_name . '/src/views' => [
-                    '@app/themes/' . $this->theme . '/' . $this->module->module_name
-                ],
-            ],
-        ]);
-
-        return parent::render($view, $params);
-    }
+    //     return parent::render($view, $params);
+    // }
 }
