@@ -18,7 +18,18 @@ class EffController extends Controller{
     //     return $this->theme;
     // }
 
-
+    public $breadcrumb_links = [];
+    /**
+     * each element with
+     * [
+     *  'label' => 'Dashboard',
+     *  'url' => '["/admin/dashboard", id="10"]', //if empty, this will set to active link
+     *  'template' => '<li><b>{link}</b></li>', //optional
+     * ]
+     */
+    public function pushBreadcrumbLink($link){
+        $this->breadcrumb_links[] = $link;
+    }
 
     public function init(){
         parent::init();
@@ -34,6 +45,11 @@ class EffController extends Controller{
         $session->open();
 
         $session['theme'] = 'effsoft';
+    }
+
+    public function render($view, $params = []){
+        \Yii::$app->view->params['breadcrumb_links'] = $this->breadcrumb_links;
+        return parent::render($view, $params);
     }
 
     // public function render($view, $params = [], $theme = ''){
