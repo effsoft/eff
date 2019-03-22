@@ -26,16 +26,14 @@
     }
   },
   "config": {
+    "vendor-dir": "../vendor/eff",
     "process-timeout": 1800,
     "fxp-asset": {
       "enabled": false
     }
   },
   "repositories": {
-    "packagist-image":{
-      "type": "composer",
-      "url": "https://packagist.phpcomposer.com"
-    },
+    
     "asset-packagist":{
       "type": "composer",
       "url": "https://asset-packagist.org"
