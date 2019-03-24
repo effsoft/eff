@@ -28,26 +28,27 @@ class EffView extends \ogheo\htmlcompress\View{
             return parent::render($view, $params, $context);
         }
 
-        $this->theme = \Yii::createObject([
-            'class' => '\yii\base\Theme',
-            'pathMap' => [
-                // dirname(dirname(__DIR__)) . '/' .  $module_name . '/src/views' => [
-                //     '@app/themes/' . \Yii::$app->session['theme'] . '/' . $module_name,
-                //     '@app/vendor/effsoft/'. $module_name . '/src/views',
-                //     dirname(dirname(__DIR__)).'/'.$module_name.'/src/views',
-                // ],
-                // dirname(dirname(__DIR__)) . '/' .  $module_name . '/src/widgets/views' => [
-                //     '@app/themes/' . \Yii::$app->session['theme'] . '/' . $module_name.'/widgets',
-                //     '@app/vendor/effsoft/'. $module_name . '/src/views/widgets',
-                //     dirname(dirname(__DIR__)).'/'.$module_name.'/src/views/widgets',
-                // ],
-                '@app/views' => [
-                    '@app/themes/' . \Yii::$app->session['theme'],
-                    '@app/themes/effsoft',
-                ],
-            ],
-        ]);
-        
+//        $this->theme = \Yii::createObject([
+//            'class' => '\yii\base\Theme',
+//            'basePath' => '@app/views',
+//            'pathMap' => [
+//                // dirname(dirname(__DIR__)) . '/' .  $module_name . '/src/views' => [
+//                //     '@app/themes/' . \Yii::$app->session['theme'] . '/' . $module_name,
+//                //     '@app/vendor/effsoft/'. $module_name . '/src/views',
+//                //     dirname(dirname(__DIR__)).'/'.$module_name.'/src/views',
+//                // ],
+//                // dirname(dirname(__DIR__)) . '/' .  $module_name . '/src/widgets/views' => [
+//                //     '@app/themes/' . \Yii::$app->session['theme'] . '/' . $module_name.'/widgets',
+//                //     '@app/vendor/effsoft/'. $module_name . '/src/views/widgets',
+//                //     dirname(dirname(__DIR__)).'/'.$module_name.'/src/views/widgets',
+//                // ],
+//                '@app/views' => [
+//                    '@app/themes/' . \Yii::$app->session['theme'],
+//                    '@app/themes/effsoft',
+//                ],
+//            ],
+//        ]);
+
         // var_dump(\Yii::$app->controller->module->getViewPath());exit;
         // $viewFile = $this->findViewFile($view, $context);
         // return $this->renderFile($viewFile, $params, $context);
