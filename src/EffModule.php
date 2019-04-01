@@ -25,7 +25,7 @@ class EffModule extends Module {
         \Yii::$app->i18n->translations[$this->module_name .'/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' =>  $this->dir . '\\messages',
+            'basePath' =>  $this->dir . '/messages',
             'fileMap' => [
                 $this->module_name .'/app' => 'app.php',
                 $this->module_name .'/error' => 'error.php',
@@ -56,22 +56,22 @@ class EffModule extends Module {
 //            ],
 //        ];
 
-        \Yii::$app->view->theme = \Yii::createObject([
-            'class' => '\yii\base\Theme',
-            'basePath' => '@app/themes',
-            'pathMap' => [
+//         \Yii::$app->view->theme = \Yii::createObject([
+//             'class' => '\yii\base\Theme',
+//             'basePath' => '@app/themes',
+//             'pathMap' => [
 
-                $this->dir . '/views' => [
-//                    '@app/themes/' . \Yii::$app->session['theme'] . '/' . $this->module_name,//找模块目录下的文件
-                    '@app/themes/' . \Yii::$app->session['theme'],
-                ],
+//                 $this->dir . '/views' => [
+// //                    '@app/themes/' . \Yii::$app->session['theme'] . '/' . $this->module_name,//找模块目录下的文件
+//                     '@app/themes/' . \Yii::$app->session['theme'],
+//                 ],
 
-                '@app/views' => [
-                    $this->dir . '/views',
-                    '@app/themes/' . \Yii::$app->session['theme'],
-                ],
-            ],
-        ]);
+//                 '@app/views' => [
+//                     $this->dir . '/views',
+//                     '@app/themes/' . \Yii::$app->session['theme'],
+//                 ],
+//             ],
+//         ]);
     }
 
 }
