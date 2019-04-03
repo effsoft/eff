@@ -1,7 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bruce
- * Date: 2019/4/2
- * Time: 15:24
- */
+
+namespace effsoft\eff\widgets;
+
+use effsoft\eff\EffWidget;
+
+
+class TinymceWidget extends EffWidget{
+
+    public $options;
+    public $model;
+    public $attribute;
+
+    function run(){
+        return $this->render('//widgets/tinymce',[
+            'name' => $this->options['name'],
+        ]);
+    }
+}
