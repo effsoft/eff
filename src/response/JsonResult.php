@@ -20,7 +20,7 @@ class JsonResult{
         return $this;
     }
 
-    public function getResult(){
+    public function getResponse(){
         return [
             'status' => $this->status,
             'message' => $this->message,
