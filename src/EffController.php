@@ -3,6 +3,7 @@
 namespace effsoft\eff;
 
 use Yii;
+use yii\base\InlineAction;
 use yii\web\Controller;
 
 class EffController extends Controller{
@@ -38,13 +39,13 @@ class EffController extends Controller{
         if (strpos(Yii::$app->language = $language->getLanguage(),'zh') !== false){
             Yii::$app->language = 'zh-CN';
         }else{
-            Yii::$app->language = 'en';
+            Yii::$app->language = 'en-US';
         }
 
         $session = Yii::$app->session;
         $session->open();
 
-        $session['theme'] = 'effsoft';
+
     }
 
     public function render($view, $params = []){

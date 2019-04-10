@@ -11,8 +11,10 @@ class Ids{
     }
 
     public static function decodeId($hex){
-        return \Yii::$container->get(Hashids::class,[
+        $result = false;
+        @$result = \Yii::$container->get(Hashids::class,[
             'salt' => \Yii::$app->components['request']['cookieValidationKey'],
         ])->decodeHex($hex);
+        return $result;
     }
 }
