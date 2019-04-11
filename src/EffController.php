@@ -35,11 +35,22 @@ class EffController extends Controller{
     public function init(){
         parent::init();
 
-        $language = \Yii::$container->get(\Sinergi\BrowserDetector\Language::class);
-        if (strpos(Yii::$app->language = $language->getLanguage(),'zh') !== false){
-            Yii::$app->language = 'zh-CN';
+//        $language = \Yii::$container->get(\Sinergi\BrowserDetector\Language::class);
+//        if (strpos(Yii::$app->language = $language->getLanguage(),'zh') !== false){
+//            Yii::$app->language = 'zh-CN';
+//        }else{
+//            Yii::$app->language = 'en-US';
+//        }
+
+        if (!empty(\Yii::$app->request->get('lang'))){
+            $lang = \Yii::$app->request->get('lang');
+            if(array_key_exists($lang,\Yii::$app->params['language'])){
+                \Yii::$app->language = $lang;
+            }else{
+                return $this->redirect('/');
+            }
         }else{
-            Yii::$app->language = 'en-US';
+            \Yii::$app->language = 'en';
         }
 
         $session = Yii::$app->session;
