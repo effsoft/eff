@@ -60,7 +60,8 @@ class EffController extends Controller{
     }
 
     public function render($view, $params = []){
-        \Yii::$app->view->params['breadcrumb_links'] = $this->breadcrumb_links;
+//        \Yii::$app->view->params['breadcrumb_links'] = $this->breadcrumb_links;
+        $params['breadcrumb_links'] = $this->breadcrumb_links;
         return parent::render($view, $params);
     }
 
