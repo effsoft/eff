@@ -3,7 +3,6 @@
 namespace effsoft\eff;
 
 use Yii;
-use yii\base\InlineAction;
 use yii\web\Controller;
 
 class EffController extends Controller{
