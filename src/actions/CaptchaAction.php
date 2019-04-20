@@ -8,26 +8,27 @@ use yii\web\Response;
 
 class CaptchaAction extends \yii\captcha\CaptchaAction {
 
-    public $autoRegenerate = true;
-
-    public function run()
-    {
-        if (Yii::$app->request->getQueryParam(self::REFRESH_GET_VAR) !== null) {
-            // AJAX request for regenerating code
-            $code = $this->getVerifyCode(true);
-            Yii::$app->response->format = Response::FORMAT_JSON;
-            return [
-                'hash1' => $this->generateValidationHash($code),
-                'hash2' => $this->generateValidationHash(strtolower($code)),
-                // we add a random 'v' parameter so that FireFox can refresh the image
-                // when src attribute of image tag is changed
-                'url' => Url::to([$this->id, 'v' => uniqid('', true)]),
-            ];
-        }
-
-        $this->setHttpHeaders();
-        Yii::$app->response->format = Response::FORMAT_RAW;
-
-        return $this->renderImage($this->getVerifyCode(true));
-    }
+//    public $autoRegenerate = true;
+//
+//    public function run()
+//    {
+//        if (Yii::$app->request->getQueryParam(self::REFRESH_GET_VAR) !== null) {
+//            // AJAX request for regenerating code
+//            $code = $this->getVerifyCode(true);
+//            Yii::$app->response->format = Response::FORMAT_JSON;
+//            return [
+//                'hash1' => $this->generateValidationHash($code),
+//                'hash2' => $this->generateValidationHash(strtolower($code)),
+//                // we add a random 'v' parameter so that FireFox can refresh the image
+//                // when src attribute of image tag is changed
+//                'url' => Url::to([$this->id, 'v' => uniqid('', true)]),
+//                'code' => $code,
+//            ];
+//        }
+//
+//        $this->setHttpHeaders();
+//        Yii::$app->response->format = Response::FORMAT_RAW;
+//
+//        return $this->renderImage($this->getVerifyCode(true));
+//    }
 }

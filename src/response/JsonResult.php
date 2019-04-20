@@ -10,12 +10,12 @@ class JsonResult{
         return new JsonResult();
     }
 
-    public function setStatus($status){
+    public function setStatus($status = 0){
         $this->status = $status;
         return $this;
     }
 
-    public function setMessage($message){
+    public function setMessage($message = ''){
         $this->message = $message;
         return $this;
     }
