@@ -7,17 +7,6 @@ use yii\web\Controller;
 
 class EffController extends Controller{
 
-    // private $theme = 'effsoft';
-
-    // public function setTheme(string $theme): void
-    // {
-    //     $this->theme = $theme;
-    // }
-    // public function getTheme(): string
-    // {
-    //     return $this->theme;
-    // }
-
     public $breadcrumb_links = [];
     /**
      * each element with
@@ -33,13 +22,6 @@ class EffController extends Controller{
 
     public function init(){
         parent::init();
-
-//        $language = \Yii::$container->get(\Sinergi\BrowserDetector\Language::class);
-//        if (strpos(Yii::$app->language = $language->getLanguage(),'zh') !== false){
-//            Yii::$app->language = 'zh-CN';
-//        }else{
-//            Yii::$app->language = 'en-US';
-//        }
 
         if (!empty(\Yii::$app->request->get('lang'))){
             $lang = \Yii::$app->request->get('lang');
@@ -59,25 +41,15 @@ class EffController extends Controller{
     }
 
     public function render($view, $params = []){
-//        \Yii::$app->view->params['breadcrumb_links'] = $this->breadcrumb_links;
+
         $params['breadcrumb_links'] = $this->breadcrumb_links;
         return parent::render($view, $params);
     }
 
-    // public function render($view, $params = [], $theme = ''){
-    //     if (!empty($theme)){
-    //         $this->theme = $theme;
-    //     }
-        
-    //     $this->getView()->theme = \Yii::createObject([
-    //         'class' => '\yii\base\Theme',
-    //         'pathMap' => [
-    //             dirname(dirname(__DIR__)) . '/' . $this->module->module_name . '/src/views' => [
-    //                 '@app/themes/' . $this->theme . '/' . $this->module->module_name
-    //             ],
-    //         ],
-    //     ]);
-
-    //     return parent::render($view, $params);
-    // }
+    public function render_error( $status, $message, $code = 404){
+        $params['code'] = $code;
+        $params['status'] = $status;
+        $params['message'] = $message;
+        return parent::render('//error/404', $params);
+    }
 }

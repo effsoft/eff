@@ -22,7 +22,8 @@
     "vlucas/phpdotenv": "~v3.3.3",
     "himiklab/yii2-sitemap-module" : "~1.2.0",
     "skeeks/yii2-google-api": "^2.0.1",
-    "alexandernst/yii2-device-detect": "~0.0.12"
+    "alexandernst/yii2-device-detect": "~0.0.12",
+    "symfony/filesystem": "~v4.2.7"
   },
   "require-dev": {
 
