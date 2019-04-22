@@ -23,7 +23,9 @@
     "himiklab/yii2-sitemap-module" : "~1.2.0",
     "skeeks/yii2-google-api": "^2.0.1",
     "alexandernst/yii2-device-detect": "~0.0.12",
-    "yiisoft/yii2-authclient": "~2.1.0"
+    "yiisoft/yii2-authclient": "~2.1.0",
+    "symfony/process": "~v4.2.7",
+    "guzzlehttp/guzzle": "~5.3.3"
   },
   "require-dev": {
 
