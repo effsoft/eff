@@ -7,6 +7,8 @@ use yii\web\Controller;
 
 class EffController extends Controller{
 
+
+
     public $breadcrumb_links = [];
     /**
      * each element with
@@ -23,6 +25,10 @@ class EffController extends Controller{
     public function init(){
         parent::init();
 
+//        $permission = $this->module->id.'/'.$this->id;
+//        var_dump($permission);
+//        var_dump(\Yii::$app->user->can($permission));
+
         if (!empty(\Yii::$app->request->get('lang'))){
             $lang = \Yii::$app->request->get('lang');
             if(array_key_exists($lang,\Yii::$app->params['language'])){
@@ -35,8 +41,6 @@ class EffController extends Controller{
         }
 
         $session = Yii::$app->session;
-        $session->open();
-
 
     }
 

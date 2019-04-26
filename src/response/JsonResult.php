@@ -6,6 +6,12 @@ class JsonResult{
     private $status = 0;
     private $message = '';
 
+    public function __construct($status = 0, $message = '')
+    {
+        $this->status = $status;
+        $this->message = $message;
+    }
+
     public static function getNewInstance(){
         return new JsonResult();
     }
