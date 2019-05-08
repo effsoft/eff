@@ -28,7 +28,10 @@
     "guzzlehttp/guzzle": "6.3.3",
     "stichoza/google-translate-php": "~v4.0.0",
     "tsingsun/yii2-graphql": "~0.11.4",
-    "khill/php-duration":"~1.0"
+    "khill/php-duration":"~1.0",
+    "mongodb/mongodb": "~1.4.2",
+    "picqer/php-barcode-generator": "~v0.3",
+    "endroid/qr-code": "3.5.0"
   },
   "require-dev": {
 
