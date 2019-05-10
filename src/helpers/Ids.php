@@ -13,11 +13,21 @@ class Ids{
         return self::$hashids;
     }
 
-    public static function encode($id){
+    public static function encodeArray($array){
+        $hashid = self::getInstance();
+        return $hashid->encode($array);
+    }
+    public static function decodeArray($hex){
+        $hashid = self::getInstance();
+        @$result = $hashid->decode($hex);
+        return $result;
+    }
+
+    public static function encodeId($id){
         $hashid = self::getInstance();
         return $hashid->encode($id);
     }
-    public static function decode($hex){
+    public static function decodeId($hex){
         $hashid = self::getInstance();
         @$result = $hashid->decode($hex);
         if (isset($result[0])){
@@ -26,12 +36,12 @@ class Ids{
         return false;
     }
 
-    public static function encodeId($id){
+    public static function encodeObjectId($id){
         $hashid = self::getInstance();
         return $hashid->encodeHex($id);
     }
 
-    public static function decodeId($hex){
+    public static function decodeObjectId($hex){
         $hashid = self::getInstance();
         @$result = $hashid->decodeHex($hex);
         return $result;

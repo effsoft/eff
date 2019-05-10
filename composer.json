@@ -31,10 +31,18 @@
     "khill/php-duration":"~1.0",
     "mongodb/mongodb": "~1.4.2",
     "picqer/php-barcode-generator": "~v0.3",
-    "endroid/qr-code": "3.5.0"
+    "endroid/qr-code": "3.5.0",
+    "yii2tech/ar-softdelete": "*",
+
+    "yiisoft/yii2-debug": "~2.1.0",
+    "yiisoft/yii2-gii": "~2.1.0",
+    "yiisoft/yii2-faker": "~2.0.0"
   },
   "require-dev": {
-
+  
+    "codeception/base": "~2.3.0",
+    "codeception/verify": "~0.4.0",
+    "codeception/specify": "~0.4.6"
   },
   "autoload" : {
     "psr-4" : {

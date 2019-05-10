@@ -8,6 +8,6 @@ use yii\db\ActiveRecord;
 class EffMysqlActiveRecord extends ActiveRecord{
 
     public function getId(){
-        return Ids::encode($this->id);
+        return Ids::encodeId($this->id);
     }
 }
