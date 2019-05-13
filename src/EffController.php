@@ -50,7 +50,7 @@ class EffController extends Controller{
         return parent::render($view, $params);
     }
 
-    public function render_error( $status, $message, $code = 404){
+    public function render_error( $status = 0, $message = '', $code = 404){
         $params['code'] = $code;
         $params['status'] = $status;
         $params['message'] = $message;
